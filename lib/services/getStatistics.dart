@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<http.Response> getStatistics() async {
   try {
-    print('I am a chosen one getting to the initial state widget');
     final result = await http.get(
       'https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?country=Nigeria',
       headers: {

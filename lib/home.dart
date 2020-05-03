@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  const Home({
-    Key key,
-  }) : super(key: key);
+  
+  Map data = {};
 
   @override
   Widget build(BuildContext context) {
+     
+    data = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       backgroundColor: Colors.teal[400],
       appBar: AppBar(
@@ -56,20 +58,20 @@ class Home extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
               Text(
-                  "1337",
+                  '${data['confirmed']}',
                   style: TextStyle(
                   fontSize: 20,
                 )),
               SizedBox(height: 15),
               Text(
-                "255",
+                '${data['recovered']}',
                 style: TextStyle(
                 // color: Colors.white,
                 fontSize: 20,
               )),
               SizedBox(height: 15),
               Text(
-                "40",
+                '${data['death']}',
                 style: TextStyle(
                 color: Colors.red[900],
                 fontSize: 20,

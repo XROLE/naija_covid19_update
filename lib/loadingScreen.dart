@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:world_covid_update/services/getStatistics.dart';
@@ -10,11 +13,17 @@ class LoadingScreen extends StatefulWidget {
 class _LoadingScreenState extends State<LoadingScreen> {
   void fetchStatistics () async {
 
-    await getStatistics();
+    http.Response res =  await getStatistics();
+    Map data = jsonDecode(res.body);
+    int confirmed = data['data']['confirmed'];
+    int recovered = data['data']['recovered'];
+    int death = data['data']['deaths'];
+    print('I am a chosen one $data');
+
     Navigator.pushReplacementNamed(context, '/home', arguments: {
-      'confirned': 1337,
-      'recovered': 255,
-      'death': 40,
+      'confirmed': '$confirmed',
+      'recovered': '$recovered',
+      'death': '$death',
     });
   } 
 

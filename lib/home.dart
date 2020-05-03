@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
             SizedBox(height: 80,),
       Center(
                 child: Text(
-        'NIGERIA CORONA STATISTICS',
+        '${data['country'].toString().toUpperCase()} CORONA STATISTICS',
         style: TextStyle(
           fontSize: 23,
           fontWeight: FontWeight.bold,
@@ -36,6 +36,12 @@ class Home extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
+                  'Tested:',
+                  style: TextStyle(
+                    fontSize: 20,
+                  )),
+                SizedBox(height: 15),
+                Text(
                   'Confirmed:',
                   style: TextStyle(
                     fontSize: 20,
@@ -43,6 +49,12 @@ class Home extends StatelessWidget {
                 SizedBox(height: 15),
                 Text(
                   'Recovered:',
+                  style: TextStyle(
+                    fontSize: 20,
+                  )),
+                SizedBox(height: 15),
+                Text(
+                  'Critical:',
                   style: TextStyle(
                     fontSize: 20,
                   )),
@@ -58,6 +70,12 @@ class Home extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
               Text(
+                  '${data['tested']}',
+                  style: TextStyle(
+                  fontSize: 20,
+                )),
+              SizedBox(height: 15),
+              Text(
                   '${data['confirmed']}',
                   style: TextStyle(
                   fontSize: 20,
@@ -65,6 +83,13 @@ class Home extends StatelessWidget {
               SizedBox(height: 15),
               Text(
                 '${data['recovered']}',
+                style: TextStyle(
+                // color: Colors.white,
+                fontSize: 20,
+              )),
+              SizedBox(height: 15),
+              Text(
+                '${data['critical']}',
                 style: TextStyle(
                 // color: Colors.white,
                 fontSize: 20,
@@ -85,8 +110,7 @@ class Home extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal,
         onPressed: () { 
-          print('I am a chosen one too ');
-          Navigator.pushNamed(context, '/');
+          Navigator.pushNamed(context, '/load-countries');
         },
         child: Icon(
           Icons.add_location,

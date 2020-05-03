@@ -15,15 +15,20 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
     http.Response res =  await getStatistics();
     Map data = jsonDecode(res.body);
-    int confirmed = data['data']['confirmed'];
-    int recovered = data['data']['recovered'];
-    int death = data['data']['deaths'];
-    print('I am a chosen one $data');
-
+    String country = data['response'][0]['country'];
+    int tested = data['response'][0]['tests']['total'];
+    int confirmed = data['response'][0]['cases']['total'];
+    int recovered = data['response'][0]['cases']['recovered'];
+    int critical = data['response'][0]['cases']['critical'];
+    int death = data['response'][0]['deaths']['total'];
+   
     Navigator.pushReplacementNamed(context, '/home', arguments: {
       'confirmed': '$confirmed',
       'recovered': '$recovered',
       'death': '$death',
+      'tested': '$tested',
+      'critical': '$critical',
+      'country': '$country',
     });
   } 
 

@@ -21,7 +21,7 @@ class _LoadContriesState extends State<LoadContries> {
     }
 
     Navigator.pushReplacementNamed(context, '/select', arguments: {
-      'countries': '$countries'
+      'countries': countries,
     });
   }
 

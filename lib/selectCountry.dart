@@ -1,8 +1,5 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:world_covid_update/services/getCountries.dart';
 
 class Country extends StatefulWidget {
   
@@ -12,11 +9,15 @@ class Country extends StatefulWidget {
 
 class _CountryState extends State<Country> {
   Map countriesData = {};
+  List <String> countries = [];
+  String dropdownValue = 'Nigeria';
 
   @override
   Widget build(BuildContext context) {
     countriesData = ModalRoute.of(context).settings.arguments;
-    print('I am a chosen one ${countriesData['countries']}');
+    countries = countriesData['countries'];
+    countries.add('Nigeria');
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
@@ -24,7 +25,35 @@ class _CountryState extends State<Country> {
       ),
       body: Container(
         child: Center(
-          child: Text('I am a chosen one')
+          child: DropdownButton<String>(
+    value: dropdownValue,
+    icon: Icon(Icons.arrow_downward),
+    iconSize: 24,
+    elevation: 16,
+    style: TextStyle(
+      color: Colors.deepPurple
+    ),
+    underline: Container(
+      height: 2,
+      color: Colors.deepPurpleAccent,
+    ),
+    onChanged: (String newValue) {
+      setState(() {
+        dropdownValue = newValue;
+        Navigator.pushNamed(context, '/get-statistics', arguments: {
+          'selectedCountry': dropdownValue
+        },);
+      });
+    },
+    items: countries
+      .map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      })
+      .toList(),
+  ),
         ),
       ),
     );

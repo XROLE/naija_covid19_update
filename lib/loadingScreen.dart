@@ -14,6 +14,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
   void fetchStatistics () async {
 
     http.Response res =  await getStatistics();
+
+    if(res.body.isNotEmpty) {
     Map data = jsonDecode(res.body);
     String country = data['response'][0]['country'];
     int tested = data['response'][0]['tests']['total'];
@@ -30,6 +32,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
       'critical': '$critical',
       'country': '$country',
     });
+    }
   } 
 
   @override

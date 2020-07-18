@@ -28,7 +28,7 @@ class _StatisticsState extends State<Statistics> {
       'recovered': '$recovered',
       'death': '$death',
       'tested': '$tested',
-      'critical': '$critical',
+      'critical': '$critical', 
       'country': '$country',
     });
   } 

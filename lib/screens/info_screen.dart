@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:world_covid_update/screens/result_screen.dart';
 import 'package:world_covid_update/services/app_color.dart';
 
 class InfoScreen extends StatelessWidget {
@@ -25,7 +26,9 @@ class InfoScreen extends StatelessWidget {
             SizedBox(height: 10),
             Text(
                 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has bee type'),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -50,12 +53,26 @@ class InfoScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => InfoScreen(),
+                          builder: (context) => ResultScreen(),
                         ),
                       );
                     },
                   ),
-                )
+                ),
+              ],
+            ),
+            SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "symptoms",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text("See All"),
               ],
             ),
           ],

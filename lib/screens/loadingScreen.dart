@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:world_covid_update/services/app_color.dart';
 import 'package:world_covid_update/services/getStatistics.dart';
 
 class LoadingScreen extends StatefulWidget {
@@ -44,12 +45,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.teal,
-          title: Center(child: Text('World Covid-19 Update')),
+          backgroundColor: Color(AppColor.primaryColor()),
+          title: Center(child: Text('Naija Covid-19 Update')),
         ),
         body: Container(
           child: SpinKitFoldingCube(
-            color: Colors.teal[200],
+            color: Color(AppColor.primaryColor()),
             size: 50.0,
           ),
       ),

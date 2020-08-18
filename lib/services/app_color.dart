@@ -6,6 +6,10 @@ class AppColor {
     return ColorUtils.hexToInt('#3A48ED');
   }
 
+  static int primaryColorDark() {
+    return ColorUtils.hexToInt('#2B3AEB');
+  }
+
   static int bgColor() {
     return ColorUtils.hexToInt('#F4F4FA');
   }

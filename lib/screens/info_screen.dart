@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:world_covid_update/screens/result_screen.dart';
 import 'package:world_covid_update/services/app_color.dart';
+import 'package:world_covid_update/widgets/info_card.dart';
 import 'package:world_covid_update/widgets/symptomps_carousel.dart';
 
 class InfoScreen extends StatelessWidget {
@@ -44,16 +45,15 @@ class InfoScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    'Get Started',
+                    'Select Country',
                     style: TextStyle(
-                      fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 50),
                   Container(
                     height: 45,
-                    width: 45,
+                    width: 65,
                     decoration: BoxDecoration(
                         color: Color(AppColor.primaryColor()),
                         borderRadius: BorderRadius.circular(10)),
@@ -73,7 +73,7 @@ class InfoScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
@@ -90,8 +90,10 @@ class InfoScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 5),
+            SizedBox(height: 10),
             SymptomsCarousel(),
+            SizedBox(height: 15),
+            InfoCard(),
           ],
         ),
       ),

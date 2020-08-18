@@ -7,7 +7,7 @@ class SymptomsCarousel extends StatelessWidget {
     return Row(
       children: [
         Container(
-          height: 150,
+          height: 120,
           width: 230,
           margin: EdgeInsets.only(right: 15),
           decoration: BoxDecoration(
@@ -56,7 +56,7 @@ class SymptomsCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
+      height: 135,
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: ListView.builder(

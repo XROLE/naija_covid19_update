@@ -1,5 +1,4 @@
 import 'package:basic_utils/basic_utils.dart';
-import 'package:naija_covid_update/screens/welcome_screen.dart';
 
 class AppColor {
   static int primaryColor() {
@@ -12,5 +11,17 @@ class AppColor {
 
   static int bgColor() {
     return ColorUtils.hexToInt('#F4F4FA');
+  }
+
+  static int confirmedColor() {
+    return ColorUtils.hexToInt('#746A14');
+  }
+
+  static int recoverdColor() {
+    return ColorUtils.hexToInt('#12751B');
+  }
+
+  static int deathColor() {
+    return ColorUtils.hexToInt('#7C0A0A');
   }
 }

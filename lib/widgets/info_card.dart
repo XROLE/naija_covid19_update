@@ -11,7 +11,7 @@ class InfoCard extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: Color(AppColor.primaryColor()),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -17,7 +17,7 @@ class InfoScreen extends StatelessWidget {
         color: Color(AppColor.bgColor()),
         child: Column(
           children: [
-            SizedBox(height: 65),
+            SizedBox(height: 50),
             Text(
               'Hi Fellow',
               textAlign: TextAlign.center,
@@ -74,7 +74,7 @@ class InfoScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
@@ -83,7 +83,7 @@ class InfoScreen extends StatelessWidget {
                   Text(
                     "Symptoms",
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -93,8 +93,9 @@ class InfoScreen extends StatelessWidget {
             ),
             SizedBox(height: 10),
             SymptomsCarousel(),
-            SizedBox(height: 15),
+            SizedBox(height: 25),
             InfoCard(),
+            SizedBox(height: 10),
             Requirments(),
           ],
         ),

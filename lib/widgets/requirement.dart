@@ -1,32 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:naija_covid_update/models/requirements_model.dart';
 
 class Requirments extends StatelessWidget {
-  List<String> requirementImages = [
-    'assets/images/facemask.jpg',
-    'assets/images/wash.png',
-    'assets/images/nohandshake.jpg',
-    'assets/images/distance.jpg',
-  ];
-
   Widget buildRequirement() {
     List<Widget> list = new List<Widget>();
-    for (var i = 0; i < requirementImages.length; i++) {
-      list.add(
-        new Container(
-          height: 70,
-          width: 70,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: Image(
-            image: AssetImage('$list[i]'),
-          ),
+    for (var i = 0; i < requirementList.length; i++) {
+      list.add(new Container(
+        height: 70,
+        width: 70,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
         ),
-      );
+        child: Image(image: AssetImage(requirementList[i].image)),
+      ));
     }
     return new Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: list,
     );
   }
@@ -35,11 +25,14 @@ class Requirments extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 20),
         Container(
+          padding: EdgeInsets.only(left: 10),
+          alignment: Alignment.centerLeft,
           child: Text(
             'Requirements',
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),

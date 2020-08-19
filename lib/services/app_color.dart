@@ -1,5 +1,5 @@
 import 'package:basic_utils/basic_utils.dart';
-import 'package:world_covid_update/screens/welcome_screen.dart';
+import 'package:naija_covid_update/screens/welcome_screen.dart';
 
 class AppColor {
   static int primaryColor() {

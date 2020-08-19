@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:world_covid_update/models/symptoms_model.dart';
+import 'package:naija_covid_update/models/symptoms_model.dart';
 
 class SymptomsCarousel extends StatelessWidget {
   Widget _buildSymptom(String name, String description, String image) {

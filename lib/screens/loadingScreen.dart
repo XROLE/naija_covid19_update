@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:world_covid_update/services/app_color.dart';
-import 'package:world_covid_update/services/getStatistics.dart';
+import 'package:naija_covid_update/services/app_color.dart';
+import 'package:naija_covid_update/services/getStatistics.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override

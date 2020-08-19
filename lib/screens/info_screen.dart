@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:world_covid_update/screens/result_screen.dart';
-import 'package:world_covid_update/services/app_color.dart';
-import 'package:world_covid_update/widgets/info_card.dart';
-import 'package:world_covid_update/widgets/symptomps_carousel.dart';
+import 'package:naija_covid_update/screens/result_screen.dart';
+import 'package:naija_covid_update/services/app_color.dart';
+import 'package:naija_covid_update/widgets/info_card.dart';
+import 'package:naija_covid_update/widgets/requirement.dart';
+import 'package:naija_covid_update/widgets/symptomps_carousel.dart';
 
 class InfoScreen extends StatelessWidget {
   @override
@@ -94,6 +95,7 @@ class InfoScreen extends StatelessWidget {
             SymptomsCarousel(),
             SizedBox(height: 15),
             InfoCard(),
+            Requirments(),
           ],
         ),
       ),

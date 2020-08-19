@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:world_covid_update/main.dart';
-import 'package:world_covid_update/home.dart';
+import 'package:naija_covid_update/main.dart';
+import 'package:naija_covid_update/home.dart';
 
 void main() {
   testWidgets('Loading Screen', (WidgetTester tester) async {

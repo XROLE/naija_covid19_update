@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:world_covid_update/services/app_color.dart';
+import 'package:naija_covid_update/services/app_color.dart';
 
 class InfoCard extends StatelessWidget {
   @override

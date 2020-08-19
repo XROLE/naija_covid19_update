@@ -1,5 +1,5 @@
-name: world_covid_update
-description: A new Flutter project.
+name: naija_covid_update
+description: Shows corona virus update in Nigeria.
 
 # /archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 0.0.1+1
@@ -42,6 +42,10 @@ flutter:
     - assets/images/fever.png
     - assets/images/cough.jpg
     - assets/images/tiredness.png
+    - assets/images/facemask.jpg
+    - assets/images/wash.png
+    - assets/images/nohandshake.jpg
+    - assets/images/distance.jpg
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

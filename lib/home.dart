@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:world_covid_update/screens/welcome_screen.dart';
-import 'package:world_covid_update/services/app_color.dart';
+import 'package:naija_covid_update/screens/welcome_screen.dart';
+import 'package:naija_covid_update/services/app_color.dart';
 
 class Home extends StatelessWidget {
   Map data = {};

@@ -10,8 +10,11 @@ class Requirments extends StatelessWidget {
       for (var i = 0; i < requirementList.length; i++) {
         list.add(GestureDetector(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DetailScreen()));
+            Navigator.pushReplacementNamed(context,
+                '/details', arguments: {
+                  "name": requirementList[i].name,
+                  "description": requirementList[i].details,
+                });
           },
           child: new Container(
             height: 70,

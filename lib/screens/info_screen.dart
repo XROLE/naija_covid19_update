@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:naija_covid_update/screens/result_screen.dart';
 import 'package:naija_covid_update/screens/result_screen_demo.dart';
 import 'package:naija_covid_update/services/app_color.dart';
 import 'package:naija_covid_update/widgets/info_card.dart';
@@ -60,7 +59,7 @@ class InfoScreen extends StatelessWidget {
                         color: Color(AppColor.primaryColor()),
                         borderRadius: BorderRadius.circular(10)),
                     child: IconButton(
-                      icon: Icon(Icons.arrow_forward),
+                      icon: Icon(Icons.check),
                       color: Colors.white,
                       onPressed: () {
                         Navigator.push(

@@ -11,7 +11,7 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   int _currentIndex = 0;
 
-   void navigatePages(val) {
+  void navigatePages(val) {
     if (val == 0) {
       Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
     } else if (val == 1) {
@@ -22,10 +22,33 @@ class _DetailScreenState extends State<DetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Map symptoms = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
-      body: Center(
-        child: Text('Comming soon'),
-      ),
+      body: Column(children: [
+        SizedBox(height: 60),
+        Container(
+          alignment: Alignment.center,
+          child: Text(
+            symptoms['name'],
+            style: TextStyle(
+              fontSize: 27,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        SizedBox(height: 20),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 30),
+          child: Text(
+            symptoms['description'],
+            textAlign: TextAlign.justify,
+            style: TextStyle(
+              fontSize: 22,
+            ),
+          ),
+        ),
+      ]),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         backgroundColor: Color(AppColor.primaryColor()),
@@ -39,10 +62,10 @@ class _DetailScreenState extends State<DetailScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.refresh,
+              Icons.info,
               color: Colors.white,
             ),
-            title: Text('Camera', style: TextStyle(color: Colors.white)),
+            title: Text('info page', style: TextStyle(color: Colors.white)),
           ),
         ],
         onTap: (index) {

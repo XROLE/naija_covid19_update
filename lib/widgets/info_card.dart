@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naija_covid_update/models/isolation_model.dart';
 import 'package:naija_covid_update/services/app_color.dart';
 
 class InfoCard extends StatelessWidget {
@@ -25,22 +26,30 @@ class InfoCard extends StatelessWidget {
                 Text(
                   'Stay at home to stop corona virus',
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold
-                  ),
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 12),
-                Container(
-                  height: 45,
-                  width: 150,
-                  color: Color(AppColor.primaryColorDark()),
-                  child: Center(
-                    child: Text(
-                      'Know More',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, '/details',
+                        arguments: {
+                          'name': 'STAY AT HOME',
+                          'description': isolation,
+                        });
+                  },
+                  child: Container(
+                    height: 45,
+                    width: 150,
+                    color: Color(AppColor.primaryColorDark()),
+                    child: Center(
+                      child: Text(
+                        'Know More',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                   ),

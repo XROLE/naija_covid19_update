@@ -1,0 +1,2 @@
+String isolation =
+    'The Nigeria Centre for Disease Control (NCDC) has asked that people who return from a country with widespread community transmission of COVID-19, should stay at home and isolate themselves for 14 days. Self-isolation is a precautionary measure to protect those around you from contracting the virus, if you have it. It involves avoiding close contact with other people as much as possible. This means:';

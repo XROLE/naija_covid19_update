@@ -12,47 +12,50 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
-  void fetchStatistics () async {
+  void fetchStatistics() async {
+    http.Response res = await getStatistics();
 
-    http.Response res =  await getStatistics();
+    if (res.body.isNotEmpty) {
+      Map data = jsonDecode(res.body);
+      String country = data['response'][0]['country'];
+      int tested = data['response'][0]['tests']['total'];
+      int confirmed = data['response'][0]['cases']['total'];
+      int recovered = data['response'][0]['cases']['recovered'];
+      int critical = data['response'][0]['cases']['critical'];
+      int death = data['response'][0]['deaths']['total'];
 
-    if(res.body.isNotEmpty) {
-    Map data = jsonDecode(res.body);
-    String country = data['response'][0]['country'];
-    int tested = data['response'][0]['tests']['total'];
-    int confirmed = data['response'][0]['cases']['total'];
-    int recovered = data['response'][0]['cases']['recovered'];
-    int critical = data['response'][0]['cases']['critical'];
-    int death = data['response'][0]['deaths']['total'];
-   
-    Navigator.pushReplacementNamed(context, '/home', arguments: {
-      'confirmed': '$confirmed',
-      'recovered': '$recovered',
-      'death': '$death',
-      'tested': '$tested',
-      'critical': '$critical',
-      'country': '$country',
-    });
+      print(
+          'I am a chosen one from loading Screen ======> country: $country Confirmed: $confirmed');
+
+      Navigator.pushReplacementNamed(context, '/result', arguments: {
+        'confirmed': '$confirmed',
+        'recovered': '$recovered',
+        'death': '$death',
+        'tested': '$tested',
+        'critical': '$critical',
+        'country': '$country',
+      });
     }
-  } 
+  }
 
   @override
   void initState() {
     fetchStatistics();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(AppColor.primaryColor()),
-          title: Center(child: Text('Naija Covid-19 Update')),
+      appBar: AppBar(
+        backgroundColor: Color(AppColor.primaryColor()),
+        title: Center(child: Text('Naija Covid-19 Update')),
+      ),
+      body: Container(
+        child: SpinKitFoldingCube(
+          color: Color(AppColor.primaryColor()),
+          size: 50.0,
         ),
-        body: Container(
-          child: SpinKitFoldingCube(
-            color: Color(AppColor.primaryColor()),
-            size: 50.0,
-          ),
       ),
     );
   }

@@ -68,7 +68,6 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     result = ModalRoute.of(context).settings.arguments;
-    print('I am a chosen one resutl ============================> $result');
 
     return Scaffold(
       body: SafeArea(
@@ -110,7 +109,7 @@ class _ResultScreenState extends State<ResultScreen> {
                           color: Colors.white,
                         ),
                         child: Text(
-                          results.country,
+                          result['country'],
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
@@ -143,10 +142,10 @@ class _ResultScreenState extends State<ResultScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.refresh,
+              Icons.info,
               color: Colors.white,
             ),
-            title: Text('Camera', style: TextStyle(color: Colors.white)),
+            title: Text('info', style: TextStyle(color: Colors.white)),
           ),
         ],
         onTap: (index) {

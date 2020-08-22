@@ -23,7 +23,7 @@ class _StatisticsState extends State<Statistics> {
     int critical = resultData['response'][0]['cases']['critical'];
     int death = resultData['response'][0]['deaths']['total'];
     
-    Navigator.pushReplacementNamed(context, '/home', arguments: {
+    Navigator.pushReplacementNamed(context, '/result', arguments: {
       'confirmed': '$confirmed',
       'recovered': '$recovered',
       'death': '$death',

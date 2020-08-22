@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   basic_utils: ^2.0.0
+  flutter_launcher_icons: ^0.7.5
 
   http: ^0.12.1
   flutter_spinkit: "^4.1.2"
@@ -23,12 +24,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter.
-flutter:
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/icon.png"
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -36,6 +35,7 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+flutter:
   assets:
     - assets/images/stay.png
     - assets/images/covid.png

@@ -69,7 +69,7 @@ class WelcomeScreen extends StatelessWidget {
                       color: Color(AppColor.primaryColor()),
                       borderRadius: BorderRadius.circular(10)),
                   child: IconButton(
-                    icon: Icon(Icons.arrow_forward),
+                    icon: Icon(Icons.forward),
                     color: Colors.white,
                     onPressed: () {
                       Navigator.push(

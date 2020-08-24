@@ -24,7 +24,7 @@ class _InfoScreenState extends State<InfoScreen> {
         height: double.infinity,
         width: double.infinity,
         color: Color(AppColor.bgColor()),
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(height: 50),
             Text(

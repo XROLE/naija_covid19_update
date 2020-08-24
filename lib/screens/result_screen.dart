@@ -21,8 +21,8 @@ class _ResultScreenState extends State<ResultScreen> {
 
     for (var i = 0; i < resultFields.length; i++) {
       resultList.add(Container(
-        height: 130,
-        width: 139,
+        height: 120,
+        width: 129,
         margin: EdgeInsets.all(25),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -74,7 +74,7 @@ class _ResultScreenState extends State<ResultScreen> {
         child: Container(
           color: Color(AppColor.bgColor()),
           height: double.infinity,
-          child: Column(
+          child: ListView(
             children: [
               Container(
                 height: 150,

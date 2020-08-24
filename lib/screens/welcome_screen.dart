@@ -6,12 +6,15 @@ import 'package:naija_covid_update/services/app_color.dart';
 import 'info_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  MediaQueryData queryData;
+
   @override
   Widget build(BuildContext context) {
+    queryData = MediaQuery.of(context);
     return Container(
-      height: double.infinity,
+      height: queryData.size.height ,
       color: Color(AppColor.primaryColor()),
-      child: Column(
+      child: ListView(
         children: [
           SizedBox(height: 30),
           Image(

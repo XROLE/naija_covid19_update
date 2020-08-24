@@ -25,7 +25,7 @@ class _DetailScreenState extends State<DetailScreen> {
     Map symptoms = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
-      body: Column(children: [
+      body: ListView(children: [
         SizedBox(height: 60),
         Container(
           alignment: Alignment.center,

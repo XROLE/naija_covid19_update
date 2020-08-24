@@ -13,20 +13,23 @@ class InfoScreen extends StatefulWidget {
 }
 
 class _InfoScreenState extends State<InfoScreen> {
+  MediaQueryData queryData;
   List<String> countries = countriesList;
   String dropdownValue = 'Nigeria';
 
   @override
   Widget build(BuildContext context) {
+    queryData = MediaQuery.of(context);
+
     return Scaffold(
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 10),
-        height: double.infinity,
-        width: double.infinity,
+        height: queryData.size.height,
+        width: queryData.size.width,
         color: Color(AppColor.bgColor()),
         child: ListView(
           children: [
-            SizedBox(height: 50),
+            SizedBox(height: 20),
             Text(
               'Hi Fellow',
               textAlign: TextAlign.center,

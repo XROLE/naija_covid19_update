@@ -9,7 +9,8 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(AppColor.primaryColor()),
-      body: SafeArea(child: WelcomeScreen()),
+      body: SafeArea(
+        child: WelcomeScreen()),
     );
   }
 }

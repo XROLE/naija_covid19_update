@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:naija_covid_update/models/isolation_model.dart';
 import 'package:naija_covid_update/services/app_color.dart';
 
-class InfoCard extends StatelessWidget {
+class  InfoCard extends StatelessWidget {
+  MediaQueryData queryData;
+
   @override
   Widget build(BuildContext context) {
+    queryData = MediaQuery.of(context);
+
     return Container(
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.symmetric(horizontal: 10),
-      height: 130,
+      height:  queryData.size.height * 0.2,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Color(AppColor.primaryColor()),
@@ -19,18 +23,18 @@ class InfoCard extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.topLeft,
-            width: 150,
+            width:  queryData.size.width * 0.35,
             child: Column(
               children: [
-                SizedBox(height: 7),
+                SizedBox(height:  queryData.size.height * 0.01),
                 Text(
                   'Stay at home to stop corona virus',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: queryData.size.height * 0.025,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 12),
+                SizedBox(height:  queryData.size.height * 0.03),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushReplacementNamed(context, '/details',
@@ -40,15 +44,15 @@ class InfoCard extends StatelessWidget {
                         });
                   },
                   child: Container(
-                    height: 45,
-                    width: 150,
+                    height:  queryData.size.height * 0.06,
+                    width:  queryData.size.width * 03,
                     color: Color(AppColor.primaryColorDark()),
                     child: Center(
                       child: Text(
                         'Know More',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: queryData.size.height * 0.025,
                         ),
                       ),
                     ),

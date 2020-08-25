@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:naija_covid_update/models/requirements_model.dart';
-import 'package:naija_covid_update/screens/detail_screen.dart';
 
 class Requirments extends StatelessWidget {
+  MediaQueryData queryData;
+
   @override
   Widget build(BuildContext context) {
+    queryData = MediaQuery.of(context);
+
     Widget buildRequirement() {
       List<Widget> list = new List<Widget>();
       for (var i = 0; i < requirementList.length; i++) {
@@ -17,8 +20,8 @@ class Requirments extends StatelessWidget {
                 });
           },
           child: new Container(
-            height: 70,
-            width: 70,
+            height: queryData.size.height * 0.14,
+            width: queryData.size.width * 0.18,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(15),
@@ -35,19 +38,19 @@ class Requirments extends StatelessWidget {
 
     return Column(
       children: [
-        SizedBox(height: 20),
+        SizedBox(height: queryData.size.height * 0.02),
         Container(
           padding: EdgeInsets.only(left: 10),
           alignment: Alignment.centerLeft,
           child: Text(
             'Requirements',
             style: TextStyle(
-              fontSize: 20,
+              fontSize: queryData.size.height * 0.025,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
-        SizedBox(height: 12),
+        SizedBox(height: queryData.size.height * 0.01),
         buildRequirement(),
       ],
     );

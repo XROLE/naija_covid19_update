@@ -3,8 +3,12 @@ import 'package:flutter/rendering.dart';
 import 'package:naija_covid_update/models/symptoms_model.dart';
 
 class SymptomsCarousel extends StatelessWidget {
+  MediaQueryData queryData;
+
   @override
   Widget build(BuildContext context) {
+    queryData = MediaQuery.of(context);
+
     Widget _buildSymptom(String name, String description, String image) {
       return Row(
         children: [
@@ -16,8 +20,8 @@ class SymptomsCarousel extends StatelessWidget {
               });
             },
             child: Container(
-              height: 95,
-              width: 230,
+              height: queryData.size.height * 0.24,
+              width:  queryData.size.width * 0.55,
               margin: EdgeInsets.only(right: 15),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -26,8 +30,8 @@ class SymptomsCarousel extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    height: 90,
-                    width: 100,
+                    height:  queryData.size.height * 0.13,
+                    width:  queryData.size.width * 0.22,
                     child: Image(
                       image: AssetImage(image),
                     ),
@@ -36,7 +40,7 @@ class SymptomsCarousel extends StatelessWidget {
                     child: Container(
                       child: Column(
                         children: [
-                          SizedBox(height: 10),
+                          SizedBox(height: queryData.size.height * 0.02),
                           Container(
                             alignment: Alignment.centerLeft,
                             child: Text(
@@ -48,7 +52,7 @@ class SymptomsCarousel extends StatelessWidget {
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
-                          SizedBox(height: 5),
+                          SizedBox(height:  queryData.size.height * 0.008),
                           Flexible(
                             child: Text(
                               description,
@@ -69,8 +73,8 @@ class SymptomsCarousel extends StatelessWidget {
     }
 
     return Container(
-      height: 100,
-      width: double.infinity,
+      height: queryData.size.height * 0.15,
+      width:  queryData.size.width * 0.24,
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,

@@ -11,26 +11,32 @@ class ResultScreen extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreen> {
+  MediaQueryData queryData;
   Map result;
 
   int _currentIndex = 0;
   List<Widget> _buildResult() {
     List<Widget> resultList = [];
     List<String> resultFields = ['Tested', 'Confirmed', 'Recovered', 'Death'];
-    List<String> resultFieldsVal = [result['tested'], result['confirmed'], result['recovered'], result['death'] ];
+    List<String> resultFieldsVal = [
+      result['tested'],
+      result['confirmed'],
+      result['recovered'],
+      result['death']
+    ];
 
     for (var i = 0; i < resultFields.length; i++) {
       resultList.add(Container(
-        height: 120,
-        width: 129,
-        margin: EdgeInsets.all(25),
+        height: queryData.size.height * 0.175,
+        width: queryData.size.width * 0.335,
+        margin: EdgeInsets.symmetric(horizontal: queryData.size.width * 0.075, vertical: queryData.size.height * 0.05),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
           children: [
-            SizedBox(height: 15),
+            SizedBox(height: queryData.size.height * 0.03),
             Text(
               resultFields[i],
               textAlign: TextAlign.center,
@@ -40,7 +46,7 @@ class _ResultScreenState extends State<ResultScreen> {
                 color: matchColor(i),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: queryData.size.height * 0.045),
             Text(
               resultFieldsVal[i],
               textAlign: TextAlign.center,
@@ -67,17 +73,18 @@ class _ResultScreenState extends State<ResultScreen> {
 
   @override
   Widget build(BuildContext context) {
+    queryData = MediaQuery.of(context);
     result = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
       body: SafeArea(
         child: Container(
           color: Color(AppColor.bgColor()),
-          height: double.infinity,
+          height: queryData.size.height,
           child: ListView(
             children: [
               Container(
-                height: 150,
+                height: queryData.size.height * 0.23,
                 decoration: BoxDecoration(
                   borderRadius:
                       BorderRadius.vertical(bottom: Radius.elliptical(70, 70)),
@@ -87,8 +94,8 @@ class _ResultScreenState extends State<ResultScreen> {
                   overflow: Overflow.visible,
                   children: [
                     Positioned(
-                      top: 20,
-                      left: 20,
+                      top: queryData.size.height * 0.025,
+                      left: queryData.size.width * 0.045,
                       child: Text(
                         'Stay Safe',
                         style: TextStyle(
@@ -98,11 +105,11 @@ class _ResultScreenState extends State<ResultScreen> {
                       ),
                     ),
                     Positioned(
-                      top: 110,
-                      left: 45,
+                      top: queryData.size.height * 0.17,
+                      left: queryData.size.width * 0.09,
                       child: Container(
-                        height: 70,
-                        width: 335,
+                        height: queryData.size.height * 0.1,
+                        width: queryData.size.height * 0.5,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
@@ -120,7 +127,7 @@ class _ResultScreenState extends State<ResultScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: queryData.size.height * 0.075),
               Wrap(
                 direction: Axis.horizontal,
                 children: _buildResult(),

@@ -1,8 +1,9 @@
+import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:naija_covid_update/services/app_color.dart';
 import 'package:naija_covid_update/services/getStatistics.dart';
 
@@ -36,8 +37,11 @@ class _StatisticsState extends State<Statistics> {
 
   @override
   Widget build(BuildContext context) {
+      
+
     data = ModalRoute.of(context).settings.arguments;
     fetchStatistics();
+
     return Scaffold(
       body: Center(
         child: Column(
